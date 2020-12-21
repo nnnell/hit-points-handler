@@ -41,6 +41,7 @@ button {
 }
 
 h1 {
+  font-weight: normal;
   text-align: center;
 }
 .container {
@@ -68,6 +69,7 @@ h1 {
 }
 
 input {
+  font-size: inherit;
   color: var(--theme-fg);
   background-color: var(--theme-bg);
 }
