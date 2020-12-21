@@ -11,9 +11,121 @@
   <title>Hit Points Handler</title>
 </head>
 <body>
-  <h1>
-    Hit Points Handler
-  </h1>
+  <div class="container">
+    <h1>
+      Hit Points Handler
+    </h1>
+    <!-- <ul class="note"> -->
+      <!-- <li></li> -->
+    <!-- </ul> -->
+
+    <div class="hp" data-alive="true">
+
+      <div class="hp__total">
+        <label>
+          <span class="label-text">Total</span>
+          <input
+            type="text"
+            name="hp_total"
+            data-hp="total"
+            readonly>
+        </label>
+      </div>
+
+      <div class="hp__head">
+        <label>
+          <span class="label-text">Head</span>
+          <input
+            type="number"
+            name="hp_head"
+            data-hp="head"
+            data-tier="1"
+            max="20">
+        </label>
+      </div>
+
+      <div class="hp__torso">
+        <label>
+          <span class="label-text">Torso</span>
+          <input
+            type="number"
+            name="hp_torso"
+            data-hp="torso"
+            data-tier="1"
+            max="30">
+        </label>
+      </div>
+
+      <div class="hp__arm-left">
+        <label>
+          <span class="label-text">Left arm</span>
+          <input
+            type="number"
+            name="hp_arm_left"
+            data-hp="arm-left"
+            data-tier="2"
+            max="10">
+        </label>
+        <label class="sever-toggle">
+          <input type="checkbox" name="hp_arm_left_sever" data-sever="arm-left">
+          <span class="sever-toggle__text">Dismembered</span>
+        </label>
+      </div>
+
+      <div class="hp__arm-right">
+        <label>
+          <span class="label-text">Right arm</span>
+          <input
+            type="number"
+            name="hp_arm_right"
+            data-hp="arm-right"
+            data-tier="2"
+            max="10">
+        </label>
+        <label class="sever-toggle">
+          <input type="checkbox" name="hp_arm_right_sever" data-sever="arm-right">
+          <span class="sever-toggle__text">Dismembered</span>
+        </label>
+      </div>
+
+      <div class="hp__leg-left">
+        <label>
+          <span class="label-text">Left leg</span>
+          <input
+            type="number"
+            name="hp_leg_left"
+            data-hp="leg-left"
+            data-tier="2"
+            max="15">
+        </label>
+        <label class="sever-toggle">
+          <input type="checkbox" name="hp_leg_left_sever" data-sever="leg-left">
+          <span class="sever-toggle__text">Dismembered</span>
+        </label>
+      </div>
+
+      <div class="hp__leg-right">
+        <label>
+          <span class="label-text">Right leg</span>
+          <input
+            type="number"
+            name="hp_leg_right"
+            data-hp="leg-right"
+            data-tier="2"
+            max="15">
+        </label>
+        <label class="sever-toggle">
+          <input type="checkbox" name="hp_leg_right_sever" data-sever="leg-right">
+          <span class="sever-toggle__text">Dismembered</span>
+        </label>
+      </div>
+
+      <div class="hp__reset">
+        <button type="reset" data-hp="reset">Reset to maximum</button>
+      </div>
+
+    </div>
+  </div>
   
   <script src="hphandler.js"></script>
 </body>
