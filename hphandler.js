@@ -12,10 +12,10 @@ const hitPointsHandler = {
   resetBtn: document.querySelector('[data-hp="reset"]'),
   
   deathConditions: {
-		total: x => x <= 0,
-		// head: x => x < -30,
-		// torso: x => x < -30
-	},
+    total: x => x <= 0,
+    // head: x => x < -30,
+    // torso: x => x < -30
+  },
 
   initialHitPoints: {
     "head": {
@@ -105,6 +105,8 @@ const hitPointsHandler = {
     let increment = prevValue - updatedValue
     let targetValue = hitPoints[cascadeTarget]['value']
     let isOverMaximum = (x, target) => x > this.initialHitPoints[target]['value']
+
+    console.log(`handleCascade for ${cascadeTarget}: ${prevValue} is changing to ${updatedValue}`)
     
     // Handle a decrease:
     if (increment > 0 && updatedValue < 0) {
@@ -181,14 +183,16 @@ const hitPointsHandler = {
   
   handleDismemberment(hitPoints, affectedPart) {
     let isSevered = hitPoints[affectedPart]['severed']
-    // let affectedPartValue = hitPoints[affectedPart]['value']
+    let affectedPartValue = hitPoints[affectedPart]['value']
+    console.log('heard handleDismemberment for', affectedPart, isSevered)
+    console.log('how many hp does ', affectedPart, 'have remaining?', affectedPartValue)
 
-    // this.calculateValues(
-      // hitPoints,
-      // affectedPart,
-      // 2,
-      // affectedPartValue
-    // )
+    this.calculateValues(
+      hitPoints,
+      affectedPart,
+      2,
+      0
+    )
 
     isSevered
       ? document.querySelector(`[data-hp="${affectedPart}"]`).setAttribute('disabled', true)

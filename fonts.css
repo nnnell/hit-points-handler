@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('fonts/ibmplexmono-regular.woff2') format('woff2'),
+       url('fonts/ibmplexmono-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('fonts/ibmplexmono-italic.woff2') format('woff2'),
+       url('fonts/ibmplexmono-italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('fonts/ibmplexmono-bold.woff2') format('woff2'),
+       url('fonts/ibmplexmono-bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('fonts/ibmplexmono-bolditalic.woff2') format('woff2'),
+       url('fonts/ibmplexmono-bolditalic.woff') format('woff');
+}
