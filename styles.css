@@ -10,7 +10,7 @@
 
   --theme-bg: hsl(var(--bg-hs), 100%);
   --theme-fg: hsl(var(--fg-hs), 0%);
-  
+
   --theme-dead: red;
   --theme-focus: #7000ff;
 }
@@ -65,6 +65,34 @@ h1 {
 }
 .hp[data-alive="false"] {
 }
+
+.hp__model {
+  text-align: center;
+}
+.hp__model svg {
+  width: 100%;
+  max-width: 10em;
+}
+path[data-svg-id] {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+path[data-svg-id].is-severed {
+  opacity: 0.25;
+  /* fill: transparent; */
+  /* stroke: currentColor; */
+  /* stroke-width: 2px; */
+  /* stroke-dasharray: 3,3; */
+}
+svg .eye {
+  fill: var(--theme-bg);
+  pointer-events: none;
+}
+[data-alive="false"] .eyes--alive,
+[data-alive="true"] .eyes--dead {
+  display: none;
+}
+
 
 input {
   font-size: inherit;
@@ -164,12 +192,15 @@ input[type="checkbox"]:checked + .sever-toggle__text::after {
 }
 
 
-
 @media screen and (min-width: 28em) {
   .hp {
     grid-template-columns: repeat(3, 1fr);
   }
   /* Positioning: */
+  .hp__model {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
   .hp__reset {
     grid-column: span 3;
     grid-row: 5;

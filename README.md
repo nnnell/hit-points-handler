@@ -6,5 +6,6 @@ View at: https://internell.github.io/hit-points-handler
 
 ## TODO
 
-* Use the DOM as the sole source of truth and get rid of hard duplication of values in initialHitPoints
+* Make svg model respond to damage with colour/saturation shifts
 * Include instructions on downloading and using locally
+* Add ability to download timestamped json with current hit points model, and to upload from any such backup file

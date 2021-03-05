@@ -8,64 +8,17 @@
 
 const hitPointsHandler = {
   hpTotal: document.querySelector('[data-hp-id="total"]'),
-  // hpFields: document.querySelectorAll('[data-hp-init]'),
   hpTier1: document.querySelectorAll('[data-tier="1"]'),
   hpTier2: document.querySelectorAll('[data-tier="2"]'),
   resetBtn: document.querySelector('[data-hp-id="reset"]'),
 
   deathConditions: {
     total: x => x <= 0,
-    // head: x => x < -30,
-    // torso: x => x < -30
   },
-
-  // initialHitPoints: {
-    // "head": {
-      // "value": parseInt(document.querySelector('[data-hp-id="head"]').getAttribute('data-hp-init')),
-      // "severed": false
-    // },
-    // "torso": {
-      // "value": 30,
-      // "severed": false
-    // },
-    // "arm-left": {
-      // "value": 10,
-      // "severed": false
-    // },
-    // "arm-right": {
-      // "value": 10,
-      // "severed": false
-    // },
-    // "leg-left": {
-      // "value": 15,
-      // "severed": false
-    // },
-    // "leg-right": {
-      // "value": 15,
-      // "severed": false
-    // }
-  // },
-
-  // hitPoints: {},
 
   strIsTrue(string) {
     return string.toLowerCase() == 'true'
   },
-
-  // setupHitPoints() {
-    // let self = this
-// 
-    // Array.from(self.hpFields).forEach(field => {
-      // let fieldId = field.getAttribute('data-hp-id')
-      // let limbToggle = document.querySelector(`[data-sever=${fieldId}]`) || undefined
-// 
-      // this.hitPoints[fieldId] = {
-        // "value": parseInt(field.getAttribute('data-hp-init')),
-        // "severed": limbToggle ? self.strIsTrue(limbToggle.getAttribute('data-sever-init')) : false
-      // }
-// 
-    // })
-  // },
 
   initialize() {
     // Create the hitPoints object:
@@ -81,6 +34,13 @@ const hitPointsHandler = {
     // Set up event listeners:
     document.addEventListener('change', handleInputChange)
     this.resetBtn.addEventListener('click', reset)
+
+    // Click on an svg part to bring focus to its corresponding field:
+    document.addEventListener('click', function(e) {
+      if (!e.target.hasAttribute('data-svg-id')) return
+      let hpId = e.target.getAttribute('data-svg-id')
+      document.querySelector(`[data-hp-id="${hpId}"]`).focus()
+    })
   },
 
   reset() {
@@ -253,9 +213,13 @@ const hitPointsHandler = {
       'dismemberment'
     )
 
-    isSevered
-      ? document.querySelector(`[data-hp-id="${affectedPart}"]`).setAttribute('disabled', true)
-      : document.querySelector(`[data-hp-id="${affectedPart}"]`).removeAttribute('disabled')
+    if (isSevered) {
+      document.querySelector(`[data-hp-id="${affectedPart}"]`).setAttribute('disabled', true)
+      document.querySelector(`[data-svg-id="${affectedPart}"]`).classList.add('is-severed')
+    } else {
+      document.querySelector(`[data-hp-id="${affectedPart}"]`).removeAttribute('disabled')
+      document.querySelector(`[data-svg-id="${affectedPart}"]`).classList.remove('is-severed')
+    }
   },
 
   handleAliveness(
