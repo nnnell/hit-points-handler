@@ -83,7 +83,7 @@ button:focus {
   --theme-fg: hsl(var(--fg-hs), 50%);
   cursor: not-allowed;
 }
-input[data-hp] {
+input[data-hp-id] {
   padding: 0.5em;
   width: 100%;
   font-family: inherit;
@@ -91,7 +91,7 @@ input[data-hp] {
   border-radius: 0.35em;
   border: 2px solid var(--theme-fg);
 }
-input[data-hp="total"] {
+input[data-hp-id="total"] {
   border-width: 0;
   background-color: transparent;
   text-align: center;

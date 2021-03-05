@@ -4,19 +4,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css">
 
   <title>Hit Points Handler</title>
+
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>
       Hit Points Handler
     </h1>
-    <!-- <ul class="note"> -->
-      <!-- <li></li> -->
-    <!-- </ul> -->
 
     <div class="hp" data-alive="true">
 
@@ -26,7 +24,7 @@
           <input
             type="text"
             name="hp_total"
-            data-hp="total"
+            data-hp-id="total"
             readonly>
         </label>
       </div>
@@ -37,9 +35,8 @@
           <input
             type="number"
             name="hp_head"
-            data-hp="head"
-            data-tier="1"
-            max="20">
+            data-hp-id="head"
+            data-tier="1">
         </label>
       </div>
 
@@ -49,9 +46,8 @@
           <input
             type="number"
             name="hp_torso"
-            data-hp="torso"
-            data-tier="1"
-            max="30">
+            data-hp-id="torso"
+            data-tier="1">
         </label>
       </div>
 
@@ -61,12 +57,14 @@
           <input
             type="number"
             name="hp_arm_left"
-            data-hp="arm-left"
-            data-tier="2"
-            max="10">
+            data-hp-id="arm-left"
+            data-tier="2">
         </label>
         <label class="sever-toggle">
-          <input type="checkbox" name="hp_arm_left_sever" data-sever="arm-left">
+          <input
+            type="checkbox"
+            name="hp_arm_left_sever"
+            data-sever="arm-left">
           <span class="sever-toggle__text">Dismembered</span>
         </label>
       </div>
@@ -77,12 +75,14 @@
           <input
             type="number"
             name="hp_arm_right"
-            data-hp="arm-right"
-            data-tier="2"
-            max="10">
+            data-hp-id="arm-right"
+            data-tier="2">
         </label>
         <label class="sever-toggle">
-          <input type="checkbox" name="hp_arm_right_sever" data-sever="arm-right">
+          <input
+            type="checkbox"
+            name="hp_arm_right_sever"
+            data-sever="arm-right">
           <span class="sever-toggle__text">Dismembered</span>
         </label>
       </div>
@@ -93,12 +93,14 @@
           <input
             type="number"
             name="hp_leg_left"
-            data-hp="leg-left"
-            data-tier="2"
-            max="15">
+            data-hp-id="leg-left"
+            data-tier="2">
         </label>
         <label class="sever-toggle">
-          <input type="checkbox" name="hp_leg_left_sever" data-sever="leg-left">
+          <input
+            type="checkbox"
+            name="hp_leg_left_sever"
+            data-sever="leg-left">
           <span class="sever-toggle__text">Dismembered</span>
         </label>
       </div>
@@ -109,23 +111,25 @@
           <input
             type="number"
             name="hp_leg_right"
-            data-hp="leg-right"
-            data-tier="2"
-            max="15">
+            data-hp-id="leg-right"
+            data-tier="2">
         </label>
         <label class="sever-toggle">
-          <input type="checkbox" name="hp_leg_right_sever" data-sever="leg-right">
+          <input
+            type="checkbox"
+            name="hp_leg_right_sever"
+            data-sever="leg-right">
           <span class="sever-toggle__text">Dismembered</span>
         </label>
       </div>
 
       <div class="hp__reset">
-        <button type="reset" data-hp="reset">Reset to maximum</button>
+        <button type="reset" data-hp-id="reset">Reset to maximum</button>
       </div>
 
     </div>
   </div>
-  
-  <script src="hphandler.js"></script>
+
+  <script src="hphandler.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+{
+  "head": {
+    "value": 20,
+    "severed": false
+  },
+  "torso": {
+    "value": 30,
+    "severed": false
+  },
+  "arm-left": {
+    "value": 10,
+    "severed": false
+  },
+  "arm-right": {
+    "value": 10,
+    "severed": false
+  },
+  "leg-left": {
+    "value": 15,
+    "severed": false
+  },
+  "leg-right": {
+    "value": 15,
+    "severed": false
+  }
+}
