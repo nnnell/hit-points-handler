@@ -2,7 +2,7 @@
 
 A work in progress.
 
-View at: https://internell.github.io/hit-points-handler
+View at: https://nnnell.github.io/hit-points-handler
 
 ## TODO
 
